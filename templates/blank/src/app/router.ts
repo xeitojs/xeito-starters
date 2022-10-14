@@ -1,7 +1,10 @@
 import { createRouterConfig } from '@xeito/router';
 import { RouterConfig } from '@xeito/router';
+import { HomePage } from './pages/home/Home';
 
-export routerConfig: RouterConfig = createRouterConfig([
-  path: '/',
-  component: ,
+export RouterConfiguration: RouterConfig = createRouterConfig([
+  {
+    path: '/',
+    component: <HomePage/>
+  }
 ]);
