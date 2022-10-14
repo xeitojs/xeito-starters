@@ -1,0 +1,25 @@
+{
+  "name": "samplexeito",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel serve",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@xeito/core": "^0.0.3",
+    "@xeito/injection": "^0.0.3",
+    "@xeito/router": "^0.0.3",
+    "parcel": "^2.7.0",
+    "@swc/helpers": "^0.4.12"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "@parcel/validator-typescript": "^2.7.0",
+    "typescript": "^4.8.4"
+  }
+}
