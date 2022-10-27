@@ -29,7 +29,6 @@ export class HomePage {
 
   keyDown(e) {
     const greet = this.exampleService.greetMe(e.target.value);
-    console.log(greet)
     this.greet = greet;
   }
 
