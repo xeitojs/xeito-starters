@@ -12,9 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@swc/helpers": "^0.4.12",
-    "@xeito/core": "^0.0.5",
-    "@xeito/injection": "^0.0.5",
-    "@xeito/router": "^0.0.5",
+    "@xeito/core": "^0.0.7",
+    "@xeito/injection": "^0.0.7",
+    "@xeito/router": "^0.0.7",
     "parcel": "^2.7.0"
   },
   "devDependencies": {
