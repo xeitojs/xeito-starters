@@ -24,8 +24,10 @@ export class HomePage {
 
             <p>Edit <span className={styles.mono}>/app/pages/home/home-component.tsx</span> to test livereload</p>
             
-            <div className={styles.link}>
-              <a href="https://github.com/aerotoad/xeito" target="_blank" className={styles.link}>Xeito Github repo</a>
+            <div className={styles.links}>
+              <a href="https://github.com/aerotoad/xeito" target="_blank" className={styles.link}>Xeito Github</a>
+              <span className={styles.divider}>|</span>
+              <a href="https://aerotoad.github.io/xeito-docs" target="_blank" className={styles.link}>Xeito Docs</a>
             </div>
           </div>
         </div>
