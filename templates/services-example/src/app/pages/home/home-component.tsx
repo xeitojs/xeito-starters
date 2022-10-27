@@ -9,14 +9,15 @@ export class HomePage {
 
   @Inject() exampleService: ExampleService;
   @State() count: number = 0;
-  @State() greet: string = '';
+  @State() greet: string | null = '';
 
   private countSubscription: Subscription;
 
-  constructor() {}
+  constructor() {
+    this.exampleService.startAutomaticCount();
+  }
 
   onCreate() {
-    this.exampleService.startAutomaticCount();
     this.countSubscription = this.exampleService.$count.subscribe((count: number) => {
       this.count = count;
     });
@@ -27,7 +28,9 @@ export class HomePage {
   }
 
   keyDown(e) {
-    this.greet = this.exampleService.greetMe(e.target.value);
+    const greet = this.exampleService.greetMe(e.target.value);
+    console.log(greet)
+    this.greet = greet;
   }
 
   render() {
@@ -37,19 +40,25 @@ export class HomePage {
           <div className={styles.container}>
             <h1>Xeito</h1>
 
-            {this.greet && <h2>{this.greet}</h2>}
+            <div className={styles.inputBlock}>
+              { this.greet ? <h2>{this.greet}</h2> : null}
+              { !this.greet ? <h2>Enter your name</h2> : null }
 
-            <input type="text" onInput={(e) => this.keyDown(e)} />
-            <button className={styles.button}>Greet me</button>
+              <input type="text" placeholder="What's your name?" onInput={(e) => this.keyDown(e)} />
+            </div>
 
-            <button className={styles.button}>
-              Count is: {this.count}
-            </button>
+            <div className={styles.autoCounter}>
+              <div className={styles.text}>
+                Count is: {this.count}
+              </div>
+            </div>
 
             <p>Edit <span className={styles.mono}>/app/pages/home/home-component.tsx</span> to test livereload</p>
             
-            <div className={styles.link}>
-              <a href="https://github.com/aerotoad/xeito" target="_blank" className={styles.link}>Xeito Github repo</a>
+            <div className={styles.links}>
+              <a href="https://github.com/aerotoad/xeito" target="_blank" className={styles.link}>Xeito Github</a>
+              <span className={styles.divider}>|</span>
+              <a href="https://aerotoad.github.io/xeito-docs" target="_blank" className={styles.link}>Xeito Docs</a>
             </div>
           </div>
         </div>

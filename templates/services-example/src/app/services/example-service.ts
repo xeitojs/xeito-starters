@@ -1,19 +1,20 @@
 import { Injectable } from '@xeito/injection';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class ExampleService {
 
-  public $count: Subject<number> = new Subject<number>();
+  public $count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  greetMe(name: string): string {
-    const greeting = `Hello ${name}`;
-    this.previousValue = greeting;
+  greetMe(name: string): string | null {
+    let greeting = `Hello ${name}`;
+    if (!name) greeting = null;
     return greeting;
   }
 
   startAutomaticCount() {
     let count = 0;
+    this.$count.next(count++);
     setInterval(() => {
       this.$count.next(count++);
     }, 1000);
