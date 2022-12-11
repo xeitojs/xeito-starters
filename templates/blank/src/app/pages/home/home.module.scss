@@ -21,6 +21,7 @@ body {
       background: linear-gradient(to right, #58b3ff 0%, #bd34ff 100%);
       filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 

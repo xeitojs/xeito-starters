@@ -1,10 +1,8 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "jsxFactory": "Xeito.createElement",
-    "jsxFragmentFactory": "Xeito.Fragment",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "isolatedModules": true,
     "target": "ES6",
     "moduleResolution": "node"
   }
