@@ -5,13 +5,14 @@ import { ExampleService } from '../../services/example-service';
 
 @Component({
   selector: 'app-home',
+  services: [ExampleService]
 })
 export class HomePage extends XeitoComponent {
 
   @State() count: number = 0;
   @Inject() exampleService: ExampleService;
 
-  onCreate() {
+  onWillMount() {
     this.exampleService.startAutomaticCount();
     this.exampleService.$count.subscribe(count => {
       this.count = count;
