@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@xeito/core": "^0.1.0",
-    "@xeito/injection": "^0.1.0",
-    "@xeito/router": "^0.1.0",
+    "@xeito/core": "^0.1.3",
+    "@xeito/router": "^0.1.3",
+    "@xeito/injection": "^0.1.3",
     "parcel": "^2.7.0"
   },
   "devDependencies": {
