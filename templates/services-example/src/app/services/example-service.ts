@@ -1,7 +1,9 @@
 import { Injectable } from '@xeito/injection';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  selector: 'exampleService'
+})
 export class ExampleService {
 
   public $count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
