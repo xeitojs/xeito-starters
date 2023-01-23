@@ -1,5 +1,6 @@
-import { Inject } from '@xeito/injection';
 import { XeitoComponent, Component, html, State } from '@xeito/core';
+import { Inject } from '@xeito/injection';
+import { WriteStore } from '@xeito/store';
 import styles from './home.module.scss';
 import { ExampleService } from '../../services/example-service';
 
@@ -9,14 +10,12 @@ import { ExampleService } from '../../services/example-service';
 })
 export class HomePage extends XeitoComponent {
 
-  @State() count: number = 0;
+  @State() $count: WriteStore<number>;
   @Inject() exampleService: ExampleService;
 
-  onWillMount() {
+  onInit() {
     this.exampleService.startAutomaticCount();
-    this.exampleService.$count.subscribe(count => {
-      this.count = count;
-    });
+    this.$count = this.exampleService.$count;
   }
 
   render() {
@@ -24,20 +23,22 @@ export class HomePage extends XeitoComponent {
       <div>
         <div class=${styles.wrapper}>
           <div class=${styles.container}>
-            <h1>Xeito</h1>
+
+            <img src="https://xeito.dev/images/logo_gradient.svg" style="height:7em" />
+            <h1>Xeito Framework</h1>
 
             <button 
               class=${styles.button}
             >
-              Count is: ${this.count}
+              Count is: ${this.$count.value}
             </button>
 
             <p>Edit <span class=${styles.mono}>/app/pages/home/home-component.tsx</span> to test livereload</p>
             
             <div class=${styles.links}>
-              <a href="https://github.com/aerotoad/xeito" target="_blank" class=${styles.link}>Xeito Github</a>
+              <a href="https://github.com/aerotoad/xeito/" target="_blank" class=${styles.link}>Xeito Github</a>
               <span class=${styles.divider}>|</span>
-              <a href="https://aerotoad.github.io/xeito-docs" target="_blank" class=${styles.link}>Xeito Docs</a>
+              <a href="https://xeito.dev/" target="_blank" class=${styles.link}>Documentation</a>
             </div>
           </div>
         </div>
