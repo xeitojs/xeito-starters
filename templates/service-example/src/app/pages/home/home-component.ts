@@ -33,7 +33,7 @@ export class HomePage extends XeitoComponent {
               Count is: ${this.$count.value}
             </button>
 
-            <p>Edit <span class=${styles.mono}>/app/pages/home/home-component.tsx</span> to test livereload</p>
+            <p>Edit <span class=${styles.mono}>/app/pages/home/home-component.ts</span> to test livereload</p>
             
             <div class=${styles.links}>
               <a href="https://github.com/aerotoad/xeito/" target="_blank" class=${styles.link}>Xeito Github</a>
