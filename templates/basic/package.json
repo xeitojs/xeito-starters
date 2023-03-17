@@ -14,10 +14,10 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
-    "@xeito/core": "^0.3.4",
-    "@xeito/injection": "^0.3.4",
-    "@xeito/router": "^0.3.4",
-    "@xeito/store": "^0.3.4",
+    "@xeito/core": "^0.3.5",
+    "@xeito/injection": "^0.3.5",
+    "@xeito/router": "^0.3.5",
+    "@xeito/store": "^0.3.5",
     "@xeito/vite-plugin-xeito": "^0.0.3"
   }
 }
